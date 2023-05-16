@@ -1,5 +1,5 @@
 import sys
-
+from pdf_extract import get_cuc_bill
 
 def __Emailer(text, subject, recipient, auto=True):
     import win32com.client as win32
@@ -8,6 +8,7 @@ def __Emailer(text, subject, recipient, auto=True):
     mail = outlook.CreateItem(0)
     mail.To = recipient
     mail.Subject = subject
+
     mail.HtmlBody = text
     if auto:
         mail.Display(True)
@@ -17,9 +18,12 @@ def __Emailer(text, subject, recipient, auto=True):
 
 
 
-__Emailer("Hey", "Hey","")
 
-
+if __name__ == "__main__":
+    EMAIL = ''
+    value = get_cuc_bill()
+    value = value
+    __Emailer(value, "Hey", EMAIL )
 
 
 
